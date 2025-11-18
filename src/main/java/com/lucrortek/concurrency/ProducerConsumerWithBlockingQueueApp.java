@@ -7,7 +7,7 @@ import java.util.concurrent.BlockingQueue;
 public class ProducerConsumerWithBlockingQueueApp {
     private static BlockingQueue<Integer> blockingQ = new ArrayBlockingQueue<Integer>(10);
 
-    private  void produce() throws InterruptedException {
+    private  static void produce() throws InterruptedException {
         Random random = new Random(10);
 
         while (true) {

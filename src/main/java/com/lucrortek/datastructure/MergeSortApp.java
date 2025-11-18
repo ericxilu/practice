@@ -26,7 +26,7 @@ public class MergeSortApp {
             leftArray[l] = arry[l];
 
         for(int r = 0; r<rightArraySize; r++)
-            rightArray = arry[midIndex+1];
+            rightArray[r] = arry[midIndex+1];
 
         //current position trackers that tracks the movement of the left array and right array during comparision
         int leftArrayCurrentPostionTracker =  lowerBoundIndex;
