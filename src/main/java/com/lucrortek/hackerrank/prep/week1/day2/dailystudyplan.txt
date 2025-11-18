@@ -1,0 +1,192 @@
+## **Week 1, Day 2: Arrays and Strings Fundamentals**
+
+### **Morning Session (6:00-6:45 AM) - 45 minutes**
+
+**First 20 minutes: Array Fundamentals**
+```java
+// 1. Array declaration and initialization
+int[] numbers = new int[5];           // Empty array of size 5
+int[] values = {1, 2, 3, 4, 5};      // Initialized array
+String[] names = {"Alice", "Bob", "Charlie"};
+
+// 2. Array access and modification
+numbers[0] = 10;                      // Set first element
+int first = values[0];                // Get first element
+int length = values.length;           // Array length
+
+// 3. Array traversal patterns
+// Forward traversal
+for (int i = 0; i < values.length; i++) {
+    System.out.println(values[i]);
+}
+
+// Enhanced for loop (for-each)
+for (int num : values) {
+    System.out.println(num);
+}
+
+// Backward traversal
+for (int i = values.length - 1; i >= 0; i--) {
+    System.out.println(values[i]);
+}
+```
+
+**Next 25 minutes: ArrayList Basics**
+```java
+import java.util.ArrayList;
+
+// ArrayList creation and basic operations
+ArrayList<Integer> list = new ArrayList<>();
+list.add(10);                         // Add element
+list.add(20);
+list.add(30);
+
+int element = list.get(1);            // Get element at index 1 (20)
+list.set(1, 25);                     // Update element at index 1
+list.remove(2);                      // Remove element at index 2
+int size = list.size();               // Get size
+
+// ArrayList traversal
+for (int i = 0; i < list.size(); i++) {
+    System.out.println(list.get(i));
+}
+
+for (Integer num : list) {
+    System.out.println(num);
+}
+```
+
+### **Evening Session (8:00-9:00 PM) - 60 minutes**
+
+**First 30 minutes: Implement Basic Array Operations**
+
+1. **Array Search Function**
+```java
+public static int linearSearch(int[] arr, int target) {
+    // Return index of target, or -1 if not found
+    // Test with arr = [5, 2, 8, 1, 9], target = 8 → should return 2
+}
+```
+
+2. **Array Reverse (In-place)**
+```java
+public static void reverseArray(int[] arr) {
+    // Reverse the array in-place
+    // Test with [1, 2, 3, 4, 5] → should become [5, 4, 3, 2, 1]
+}
+```
+
+3. **Find Maximum Element**
+```java
+public static int findMax(int[] arr) {
+    // Return the largest element in the array
+    // Test with [3, 7, 1, 9, 2] → should return 9
+}
+```
+
+**Last 30 minutes: HackerRank Practice**
+
+Complete these specific problems on HackerRank:
+- **"Java Stdin and Stdout I"** - Learn basic input/output
+- **"Java Stdin and Stdout II"** - Handle different data types
+- **"Java If-Else"** - Practice conditional logic
+
+### **Key Concepts to Master Today:**
+
+**Array Operations:**
+- Declaration: `int[] arr = new int[size]`
+- Initialization: `int[] arr = {1, 2, 3}`
+- Access: `arr[index]`
+- Length: `arr.length`
+- Bounds checking: avoid `ArrayIndexOutOfBoundsException`
+
+**ArrayList Operations:**
+- Add: `list.add(element)`
+- Get: `list.get(index)`
+- Set: `list.set(index, value)`
+- Remove: `list.remove(index)`
+- Size: `list.size()`
+
+**Common Patterns:**
+- Two-pointer technique (start/end pointers)
+- Index manipulation for reversing
+- Linear search through arrays
+
+### **Practice Problems Solutions (Try First, Then Check):**
+
+<details>
+<summary>Click to see solutions after attempting</summary>
+
+```java
+// 1. Linear Search
+public static int linearSearch(int[] arr, int target) {
+    for (int i = 0; i < arr.length; i++) {
+        if (arr[i] == target) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+// 2. Reverse Array
+public static void reverseArray(int[] arr) {
+    int left = 0;
+    int right = arr.length - 1;
+
+    while (left < right) {
+        // Swap elements
+        int temp = arr[left];
+        arr[left] = arr[right];
+        arr[right] = temp;
+
+        left++;
+        right--;
+    }
+}
+
+// 3. Find Maximum
+public static int findMax(int[] arr) {
+    if (arr.length == 0) return Integer.MIN_VALUE;
+
+    int max = arr[0];
+    for (int i = 1; i < arr.length; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+    }
+    return max;
+}
+```
+</details>
+
+### **Success Criteria for Day 2:**
+✅ Can create and manipulate both arrays and ArrayLists
+✅ Understand difference between `arr.length` and `list.size()`
+✅ Successfully implemented all 3 array operation functions
+✅ Completed at least 2 HackerRank problems
+✅ Comfortable with array indexing and bounds
+
+### **Common Mistakes to Watch For:**
+- **Off-by-one errors**: Remember arrays are 0-indexed
+- **ArrayIndexOutOfBoundsException**: Always check `i < arr.length`
+- **Null pointer exceptions**: Check if array is null before accessing
+- **ArrayList vs Array confusion**: `length` vs `size()`, `[]` vs `get()`
+
+### **Day 2 Mindset:**
+- Arrays and ArrayLists are fundamental to 90% of algorithm problems
+- Focus on clean, readable code rather than clever optimizations
+- Practice the two-pointer technique - you'll use it constantly
+- Get comfortable with array manipulation - this is your bread and butter
+
+### **If you finish early:**
+- Try implementing bubble sort on an array
+- Practice more HackerRank array problems
+- Experiment with 2D arrays: `int[][] matrix = new int[3][3]`
+
+### **If you're struggling:**
+- Spend extra time on array indexing concepts
+- Draw out array operations on paper first
+- Focus on getting one problem perfect rather than rushing through all
+- Review Day 1 concepts if basic syntax is still shaky
+
+**Tomorrow Preview**: Day 3 covers HashMap, HashSet, and string manipulation - building on today's array foundation.
