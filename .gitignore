@@ -95,5 +95,4 @@ fabric.properties
 
 .DS_Store
 
-# Ignore .name file if present
-.name
+.idea
